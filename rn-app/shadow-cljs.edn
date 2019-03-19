@@ -12,7 +12,8 @@
 
  :builds       {:app {:target     :react-native
                       :init-fn    meo.ios.core/init
-                      :output-dir "app"
+                      :output-dir "./"
+                      :output-to  "./index.ios.js"
                       :release    {:compiler-options
                                    {:optimizations      :simple
                                     :output-feature-set :es-next}}}}}
