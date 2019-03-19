@@ -40,7 +40,7 @@
 
        [:cmd/route {:from #{:app/store
                             :app/ui-cmp}
-                    :to :app/sync}]
+                    :to   :app/sync}]
 
        [:cmd/route {:from :app/sync
                     :to   #{:app/store
@@ -73,16 +73,15 @@
                             :app/sync
                             :app/healthkit}}]
 
-       [:cmd/send {:to  :app/scheduler
-                   :msg [:cmd/schedule-new {:timeout 60000
-                                            :message [:sync/fetch]
-                                            :repeat  true
-                                            :initial false}]}]
-
-       [:cmd/send {:to  :app/scheduler
-                   :msg [:cmd/schedule-new {:timeout (* 10 60 1000)
-                                            :message [:sync/retry]
-                                            :repeat  true
-                                            :initial false}]}]])
+       #_[:cmd/send {:to  :app/scheduler
+                     :msg [:cmd/schedule-new {:timeout 60000
+                                              :message [:sync/fetch]
+                                              :repeat  true
+                                              :initial false}]}]
+       #_[:cmd/send {:to  :app/scheduler
+                     :msg [:cmd/schedule-new {:timeout (* 10 60 1000)
+                                              :message [:sync/retry]
+                                              :repeat  true
+                                              :initial false}]}]])
     (.registerComponent
       app-registry "meo" #(r/reactify-component ui/app-root))))

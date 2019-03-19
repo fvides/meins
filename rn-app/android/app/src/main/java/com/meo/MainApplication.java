@@ -3,6 +3,7 @@ package com.meo;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.xebia.activityrecognition.RNActivityRecognitionPackage;
 import com.dooboolab.RNAudioRecorderPlayerPackage;
 import com.reactlibrary.RNMailCorePackage;
 import com.rnfs.RNFSPackage;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNActivityRecognitionPackage(),
             new RNAudioRecorderPlayerPackage(),
             new RNMailCorePackage(),
             new RNFSPackage(),

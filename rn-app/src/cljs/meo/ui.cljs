@@ -39,6 +39,7 @@
       (let [put-fn @put-fn-atom
             bg (get-in c/colors [:header-tab @theme])]
         [:> (tab-navigator
+              #_
               {:journal  {:screen            (jrn/journal-tab local put-fn theme)
                           :navigationOptions (nav-options "list" 22)}
                :add      {:screen            (edit/editor-tab local put-fn theme)
@@ -47,6 +48,7 @@
                           :navigationOptions (nav-options "film" 22)}
                :settings {:screen            (ts/settings-tab local put-fn theme)
                           :navigationOptions (nav-options "cogs" 22)}}
+              {}
               {:swipeEnabled     false
                :animationEnabled false
                ;:initialRouteName (:active @local) ; not working properly, flickers
